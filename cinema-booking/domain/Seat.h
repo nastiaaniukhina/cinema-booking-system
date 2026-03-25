@@ -10,13 +10,8 @@ public:
     Seat(int number, bool isReserved = false)
         : number(number), isReserved(isReserved) {}
 
-    int getNumber() const {
-        return number;
-    }
-
-    bool getIsReserved() const {
-        return isReserved;
-    }
+    int getNumber() const { return number; }
+    bool getIsReserved() const { return isReserved; }
 
     void reserve() {
         if (isReserved) {
