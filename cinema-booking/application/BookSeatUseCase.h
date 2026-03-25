@@ -9,8 +9,7 @@ public:
     BookSeatUseCase(SeatRepository& repo) : repository(repo) {}
 
     void execute(int seatNumber) {
-        Seat seat = repository.getSeat(seatNumber);
+        Seat& seat = repository.getSeat(seatNumber); 
         seat.reserve();
-        repository.save(seat);
     }
 };
