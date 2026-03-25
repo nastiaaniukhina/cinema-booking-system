@@ -13,14 +13,10 @@ public:
         seats[3] = Seat(3);
     }
 
-    Seat getSeat(int number) override {
+    Seat& getSeat(int number) override {
         if (seats.find(number) == seats.end()) {
             throw std::runtime_error("Місце не знайдено");
         }
-        return seats[number];
-    }
-
-    void save(const Seat& seat) override {
-        seats[seat.getNumber()] = seat;
+        return seats.at(number);
     }
 };
